@@ -27,7 +27,7 @@ dubbo:
     group: dubbo-spring
     version: 1.0.0
     timeout: 60000
-    loadbalance: consistenthash
+#    loadbalance: consistenthash
     retries: 2
     actives: 200
-    parameters: {hash.arguments: 0, hash.nodes: 320}
+#    parameters: {hash.arguments: 0, hash.nodes: 320}

@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: ${project.artifactId}
+
+dubbo:
+  application:
+    id: consumer
+    name: ${dubbo.application.id}
+    qos:
+      enable: false
+  protocol:
+    id: dubbo
+    name: dubbo
+    port: -1
+    threadpool: fixed
+    threads: 200
+    payload: 52428800
+  registry:
+    id: dubbo-test
+    address: zookeeper://192.168.137.128:2181
+    file: /output/cache/${dubbo.application.id}.cache
+    timeout: 5000
+    session: 60000
+    check: true
+  consumer:
+    id: ${dubbo.application.id}
+    group: dubbo-spring
+    version: 1.0.0
+    timeout: 60000
+    loadbalance: consistenthash
+    retries: 2
+    actives: 200
+    parameters: {hash.arguments: 0, hash.nodes: 320}

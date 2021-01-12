@@ -1,6 +1,25 @@
 spring:
   application:
     name: ${project.artifactId}
+  boot:
+    admin:
+      client:
+        url: http://127.0.0.1:8080
+        instance:
+          prefer-ip: true
+
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+server:
+  port: 7896
 
 dubbo:
   application:

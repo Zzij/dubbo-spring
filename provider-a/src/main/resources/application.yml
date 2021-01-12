@@ -1,7 +1,16 @@
 spring:
   application:
     name: ${project.artifactId}
+  boot:
+    admin:
+      client:
+        url: http://127.0.0.1:8080
+        instance:
+          prefer-ip: true
 
+
+server:
+  port: 5236
 
 dubbo:
   scan:
@@ -36,3 +45,12 @@ dubbo:
     actives: 200
     executes: 200
     parameters: {hash.arguments: 0, hash.nodes: 320}
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'

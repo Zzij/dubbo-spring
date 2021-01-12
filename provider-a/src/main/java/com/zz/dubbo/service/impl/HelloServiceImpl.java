@@ -1,5 +1,6 @@
 package com.zz.dubbo.service.impl;
 
+import com.zz.dubbo.object.HelloObject;
 import com.zz.dubbo.service.HelloService;
 import org.apache.dubbo.config.annotation.DubboService;
 
@@ -21,5 +22,11 @@ public class HelloServiceImpl implements HelloService {
     public String hello(String name) {
         System.out.println("a");
         return "hello " + name;
+    }
+
+    @Override
+    public String hello(HelloObject helloObject) {
+        System.out.println("a");
+        return "hello " + helloObject.getName();
     }
 }

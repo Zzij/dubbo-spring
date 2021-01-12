@@ -1,5 +1,7 @@
 package com.zz.dubbo.service;
 
+import com.zz.dubbo.object.HelloObject;
+
 /**
  * @author zzj
  * @className HelloService
@@ -19,4 +21,11 @@ public interface HelloService {
      * @return  hello name
      */
     String hello(String name);
+
+    /**
+     * 打招呼
+     * @param helloObject
+     * @return
+     */
+    String hello(HelloObject helloObject);
 }
